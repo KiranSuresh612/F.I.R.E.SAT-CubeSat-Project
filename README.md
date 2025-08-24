@@ -1,2 +1,2 @@
 # F.I.R.E.SAT-CubeSat-Project
-A nanosatellite concept designed to monitor and detect wildfires from low Earth orbit using thermal imaging, AI-powered classification, and a realistic subsystem layout.
+F.I.R.E.SAT (Fire Intervention Rescue Expedition Satellite) is a self-conducted project where I designed a 3U (10 cm x 10 cm x 300 cm) cubesat that can withstand launch and Low Earth Orbit conditions, all while using a Convolutional Neural Network (CNN) retrained using augmented terrestrial pictures to detect fire signatures and downlink them using a Simulink pipeline.
