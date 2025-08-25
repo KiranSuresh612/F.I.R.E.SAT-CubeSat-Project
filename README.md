@@ -72,7 +72,24 @@ Go to the "simulink-model-files" branch, download the files named "simulink_OBC_
 NOTE: I used Simulink (the version that comes with MATLAB 2025a), so I cannot confirm if my model still works at the time of download. I also downloaded Stateflow, Computer Vision Toolbox, and Image Processing Toolbox, so you may need to as well if the model does not run properly. 
 
 ## Acknowledgements
+I want to extend a deep appreciation to GomSpace, TELEDYNE, and AAC Clyde Space for allowing me to use their CAD files for their company's components in my project. It made the design process infinitely easier with their help. This project is not to be used for commercial purposes unless permission is gained from all three entities.
 
-## Contact Details
+To gain the skills necessary to work on the tasks I wanted to in this project, I often used MathWorks courses such as Deep Learning Onramp and Stateflow Onramp. If you have access to them, they are extremely useful and provide a digital certificate.
+
+## Concluding Details
+
+You made it to the end of the README file! Congratulations! Or you could have skipped down here; either way, thank you for taking the time to look through the project that took two months of pure dedication and grit! If you would like to work together on improving F.I.R.E.SAT or want to contact me for other purposes, please do so with the contact details listed on my profile. Thank you, and have a great day!
 
 ## References
+
+Database Citation: Ibn Jafar, Anam; Islam, Al Mohimanul ; Binta Masud, Fatiha; Ullah, Jeath Rahmat; Ahmed, Md. Rayhan (2023), “FlameVision : A new dataset for wildfire classification and detection using aerial imagery ”, Mendeley Data, V4, doi: 10.17632/fgvscdjsmt.4 (Link: https://data.mendeley.com/datasets/fgvscdjsmt/4)
+
+NASA's CubeSAT 101: Basic Concepts and Processes for First-Time CubeSat Developers NASA CubeSat Launch Initiative. (n.d.). https://www.nasa.gov/wp-content/uploads/2017/03/nasa_csli_cubesat_101_508.pdf?emrc=05d3e2
+
+Youtube Videos: The Efficient Engineer. (2024, May 21). How to Build a Satellite. YouTube. https://www.youtube.com/watch?v=5voQfQOTem8
+
+Mark Rober. (2024, November 29). My New Satellite Can Take Your Selfie From Space. YouTube. https://www.youtube.com/watch?v=6KcV1C1Ui5s‌
+
+‌
+
+
