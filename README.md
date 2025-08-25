@@ -1,13 +1,12 @@
 # F.I.R.E.SAT
 
-### Building a 3U CubeSat to actively combat wildfires.
+### Building a 3U CubeSat to combat the spread of wildfires.
 
-## Introduction
-F.I.R.E.SAT (Fire Intervention Rescue Expedition Satellite) is a self-conducted project where I designed a 3U (10 cm x 10 cm x 30 cm) CubeSat that can withstand launch and low Earth orbit conditions, all while using a Convolutional Neural Network (CNN), retrained using augmented terrestrial pictures to detect fire signatures and downlink them using a Simulink pipeline. If this project were to be made and launched, the total cost to build, develop, and launch F.I.R.E.SAT would be about $400,000 USD, which is certainly not pocket money. However, feel free to explore this repo to learn more about F.I.R.E.SAT!
-
-![F.I.R.E.SAT Exploded View](https://github.com/KiranSuresh612/F.I.R.E.SAT-CubeSat-Project/blob/cfb4e0ef8275dba22b265b11921efdde663f630b/F.I.R.E.SAT%20Exploded%20View%20Video%20(Final%20GIF).gif)
+## TL;DR
+F.I.R.E.SAT (Fire Intervention Rescue Expedition Satellite) is a student-led CubeSat concept designed to monitor and detect wildfires from low Earth orbit. This project adds detailed CAD Modelling in Autodesk Inventor with intense FEA Testing in Ansys to create a flight-ready satellite chassis. Additionally, a CNN was retrained in MATLAB to detect fires from an augmented dataset of terrestrial fires and achieved ~94% accuracy, which was then implemented into a pipeline created in Simulink to simulate downlinking logic from orbit. More details on F.I.R.E.SAT can be found below.   
 
 ## Table of Contents
+- [Introduction](#Introduction)
 - [Motivation and Objective](#Motivation-and-Objective)
 - [CAD Modelling](#CAD-Modelling)
 - [FEA Testing](#FEA-Testing)
@@ -18,8 +17,13 @@ F.I.R.E.SAT (Fire Intervention Rescue Expedition Satellite) is a self-conducted 
 - [Concluding Details](#Concluding-Details)
 - [References](#References)
 
+## Introduction
+F.I.R.E.SAT (Fire Intervention Rescue Expedition Satellite) is a self-conducted project where I designed a 3U (10 cm x 10 cm x 30 cm) CubeSat that can withstand launch and low Earth orbit conditions, all while using a Convolutional Neural Network (CNN), retrained using augmented terrestrial pictures to detect fire signatures and downlink them using a Simulink pipeline. If this project were to be made and launched, the total cost to build, develop, and launch F.I.R.E.SAT would be about $400,000 USD, which is certainly not pocket money. However, feel free to explore this repo to learn more about F.I.R.E.SAT!
+
+![F.I.R.E.SAT Exploded View](https://github.com/KiranSuresh612/F.I.R.E.SAT-CubeSat-Project/blob/cfb4e0ef8275dba22b265b11921efdde663f630b/F.I.R.E.SAT%20Exploded%20View%20Video%20(Final%20GIF).gif)
+
 ## Motivation and Objective
-Wildfires are a growing threat to ecosystems around the world, especially in Canada. Current wildfire detection satellites cannot both rapidly detect and capture fine-resolution imagery to detect wildfires. The payload is a FLIR BOSON+ 640 Infrared Camera, which will perform better than most wildfire detection satellites today since infrared cameras perform better than regular cameras when the CubeSat is in Earth's shadow. Though F.I.R.E.SAT may not solve all the listed problems with modern satellites, I want it to be a mission-ready concept that, with more resources and development, may become a flight-ready mission that improves our wildfire detection and prevention capabilities. All concept sketches and art are under the "preliminary-sketches" branch.
+Wildfires are a growing threat to ecosystems around the world, especially in Canada, with severe cases across the country. Current wildfire detection satellites cannot both rapidly detect and capture fine-resolution imagery to detect wildfires. The payload is a FLIR BOSON+ 640 Infrared Camera, which will perform better than most wildfire detection satellites today since infrared cameras perform better than regular cameras when the CubeSat is in Earth's shadow. Though F.I.R.E.SAT may not solve all the listed problems with modern satellites, I want it to be a mission-ready concept that, with more resources and development, may become a flight-ready mission that improves our wildfire detection and prevention capabilities. All concept sketches and art are under the "preliminary-sketches" branch.
 
 ### CAD Modelling
 The CAD model was developed in Autodesk Inventor using various industry-sourced components and several self-developed parts. The CubeSat model has the dimensions 9.8 cm x 9.8 cm x 30 cm and is 1:1 in scale. I did not make the side lengths 10 cm, as I wanted about 0.2 cm as clearance for the CubeSat launcher's deployer rails. To make my CAD model as accurate as possible, I got CAD models from the vendors themselves. These components are: (NanoMind A3200), Power System (NanoPower P60), Comms (NanoCom AX100), Docking System (NanoDock DMC-3), GPS Kit (NanoSense NovAtel OEM-719), Thermal Camera (FLIR BOSON+ 640 with a 73mm lens), Star Trackers (AAC Hyperion ST200), Sun Sensors (AAC Hyperion SS200), Battery (AAC Clyde Space Optimus 30-Watt Battery). I created several parts as well, such as most of the Attitude Determination and Control System (ADCS), Antennae Deployer, all Mainframe parts, Protective Germanium Lens (to shield the thermal sensor from space), and Solar Cells. 
