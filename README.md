@@ -8,14 +8,14 @@ F.I.R.E.SAT (Fire Intervention Rescue Expedition Satellite) is a self-conducted 
 ![F.I.R.E.SAT Exploded View](https://github.com/KiranSuresh612/F.I.R.E.SAT-CubeSat-Project/blob/cfb4e0ef8275dba22b265b11921efdde663f630b/F.I.R.E.SAT%20Exploded%20View%20Video%20(Final%20GIF).gif)
 
 ## Table of Contents
-- [Motivation and Objective](#MotivationandObjective)
-- [CAD Modelling](#CADModelling)
-- [FEA Testing](#FEATesting)
-- [CNN Retraining](#CNNRetraining)
-- [Simulink Pipeline](#SimulinkPipeline)
-- [How to View/Use Files](#HowtoView/UseFiles)
+- [Motivation and Objective](#Motivation-and-Objective)
+- [CAD Modelling](#CAD-Modelling)
+- [FEA Testing](#FEA-Testing)
+- [CNN Retraining](#CNN-Retraining)
+- [Simulink Pipeline](#Simulink-Pipeline)
+- [How to View/Use Files](#How-to-View/Use-Files)
 - [Acknowledgements](#Acknowledgements)
-- [Concluding Details](#ConcludingDetails)
+- [Concluding Details](#Concluding-Details)
 - [References](#References)
 
 ## Motivation and Objective
