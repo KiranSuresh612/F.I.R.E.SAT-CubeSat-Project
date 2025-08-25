@@ -3,14 +3,12 @@
 ### Building a 3U CubeSat to actively combat the spread of wildfires.
 
 ## Introduction
-F.I.R.E.SAT (Fire Intervention Rescue Expedition Satellite) is a self-conducted project where I designed a 3U (10 cm x 10 cm x 30 cm) CubeSat that can withstand launch and low Earth orbit conditions, all while using a Convolutional Neural Network (CNN), retrained using augmented terrestrial pictures to detect fire signatures and downlink them using a Simulink pipeline. Feel free to explore this repo to learn more about F.I.R.E.SAT!
+F.I.R.E.SAT (Fire Intervention Rescue Expedition Satellite) is a self-conducted project where I designed a 3U (10 cm x 10 cm x 30 cm) CubeSat that can withstand launch and low Earth orbit conditions, all while using a Convolutional Neural Network (CNN), retrained using augmented terrestrial pictures to detect fire signatures and downlink them using a Simulink pipeline. If this project were to be made and launched, the total cost to build, develop, and launch F.I.R.E.SAT would be about $400,000 USD, which is certainly not pocket money. However, feel free to explore this repo to learn more about F.I.R.E.SAT!
 
 ![F.I.R.E.SAT Exploded View](https://github.com/KiranSuresh612/F.I.R.E.SAT-CubeSat-Project/blob/cfb4e0ef8275dba22b265b11921efdde663f630b/F.I.R.E.SAT%20Exploded%20View%20Video%20(Final%20GIF).gif)
 
 ## Motivation and Objective
-Wildfires are a growing threat to ecosystems around the world, especially in Canada. Current wildfire detection satellites cannot both rapidly detect and capture fine-resolution imagery to detect wildfires. F.I.R.E.SAT does not claim to fix these issues, but instead provides an idea of how a student-founded CubeSat concept could integrate AI to support wildfire monitoring and detection. 
-
-The goal for this project was to design a flight-ready 3U nanosatellite concept that can detect and downlink warnings about small wildfire hotspots while in Low Earth Orbit (LEO). All components, functions, and code have to be suitable for a nanosatellite in space. A proof-of-concept for the AI-powered wildfire detection pipeline should also be developed.  
+Wildfires are a growing threat to ecosystems around the world, especially in Canada. Current wildfire detection satellites cannot both rapidly detect and capture fine-resolution imagery to detect wildfires. The payload is a FLIR BOSON+ 640 Infared Camera, which will perform better than most wildfire detection satellites today since infrared cameras perform better than regular cameras when the CubeSat is in Earth's shadow. Though F.I.R.E.SAT may not solve all problems with modern satellites, I want it to be a mission-ready concept that, with more resources and development, may become a flight-ready mission that improves our wildfire detection and prevention capabilities. 
 
 ## Table of Contents
 
@@ -42,10 +40,36 @@ In the Transient Thermal (how temperature affects a body over time) test, I chec
 More Test Results can be viewed in the "fea-analysis" branch!
 
 ### CNN Retraining
-I retrained the pre-existing Convolutional Neural Network, SqueezeNet
+I retrained the pre-existing Convolutional Neural Network (CNN), SqueezeNet, to detect fire signatures using a dataset containing terrestrial fire images in .png format compiled by a team of researchers at Mendeley Data (citation in References) in MATLAB. SqueezeNet was chosen due to its low hardware requirements, which is a constant constraint in CubeSats such as F.I.R.E.SAT. The training set consisted of two folders, each containing thousands of pictures of either fires or no fires. These pictures were augmented to challenge the CNN and reduce the chances of the CNN memorizing the images instead of learning to differentiate between the two classes. These augmentations consisted of resizing, random rotations, and translations, which greatly helped the CNN generalize (i.e. make it adaptable so it can detect fires in any set of pictures instead of just the training set). During training, a set of images was fed alongside the training set, called the validation set, to see if the CNN was memorizing images and measure its learning after each epoch (i.e. each loop of the training set). After training, the model was tested on classifying a brand new set of images called the testing dataset, where the retrained model achieved an accuracy of ~94%! Though this is a great result, a part of me wishes I were able to use .HDF files containing thermal imagery from real satellite data to retrain the CNN, which would make it very close to being mission-ready. However, I am still proud of my progress and am very glad I took on this challenge to learn more about AI applications in wildfire detection. Below are the training progress graphs and the confusion matrix, which organizes the predictions of the CNN during testing.
+
+![Training and Validation Graphs](https://github.com/KiranSuresh612/F.I.R.E.SAT-CubeSat-Project/blob/1c3b485fed3a6990a82ccc0be8e04153f3ffe5f0/Training%20and%20Validation%20Graphs.png)
+
+![Confusion Matrix](https://github.com/KiranSuresh612/F.I.R.E.SAT-CubeSat-Project/blob/1c3b485fed3a6990a82ccc0be8e04153f3ffe5f0/Confusion%20Matrix.png)
+
 ### Simulink Pipeline
+The pipeline created in Simulink was made to complement the retrained CNN by simulating how F.I.R.E.SAT handles wildfire imaging and processing in orbit, with the only constraint in this simulation being a limited battery power. The process starts with an image being captured and preprocessed for image classification by the CNN. After classification, the CNN outputs the prediction on whether the image contains a fire or not and a percentage to show how confident it is in its prediction. The prediction enters a stateflow chart meant to be a downlink logic box with three states: Idle, ReadyToTransmit, and LowBattery. The prediction is passed through (i.e. approved for being sent down to Earth) if and only if a fire has been detected and there is sufficient charge in the battery. This measure is to reduce the volume of data sent down to Earth and automate the process of pinpointing the locations of fires. The battery factor was included to simulate how the satellite downlinking logic should react at different battery levels to either send data of detected fires immediately or send the last reading, then enter Safe Mode to preserve the satellite for future use instead of entirely using it up and potentially missing fires along the line. One thing I wanted to figure out was how to feed a folder of images instead of one image at a time to test the downlink logic under more realistic circumstances.
+
+![Simulink Pipeline Picture](https://github.com/KiranSuresh612/F.I.R.E.SAT-CubeSat-Project/blob/542c342aecb6dbfcaf5b9e63448345007e6e9592/Simulink%20Model%20Picture.png)
 
 ## How to View/Use Files
+
+If you would like to go through my work on F.I.R.E.SAT, feel free to do so via the various branches of this repo. If you are having trouble, please take a look at the instructions below.
+
+CAD Model: 
+Go to the "cad-files" branch, download the file named "F.I.R.E.SAT Mk.2 (Final Design).iam" and open with a CAD-friendly software like SolidWorks, Autodesk Inventor, etc (preferably Autodesk Inventor).
+
+FEA Workflow: 
+Go to the "fea-analysis" branch, download the file named "FEA Model.wbpj" and open it with Ansys Workbench. The workflow and the used model are already in the workbench file! 
+
+CNN Retraining: 
+Download the dataset by following the link in the References section and extract all the files. Please note that you will be using the folders in the Classification folder. Then, go to the "wildfire-classifier-cnn-files" branch, download the file named "Training Script.m" and open it in MATLAB. Fill in the sections listed in the code and finally run. Make sure all the files you download and use are in the same folder. It will take a varying amount of time to train (depends on your specs) and then test, but after, you will have your very own retrained wildfire detection CNN. 
+
+NOTE: I used MATLAB 2025a, so I do not know if the syntax or script will still work at the time of download. I also had to download the Deep Learning Toolbox and the Statistics and Machine Learning Toolbox (not 100% sure if needed by install just in case) using the Add-On explorer. 
+
+Simulink Pipeline: 
+Go to the "simulink-model-files" branch, download the files named "simulink_OBC_Diagram.slx" and "simulink_OBC_Diagram.slxc" and save them to the same folder. Then, transfer a copy of your retrained CNN from the folder you used for MATLAB (previous activity) to your newly made folder. Also, be sure to have a folder containing a few images from the dataset mentioned previously (fire and no fire samples) in the same primary folder. Then insert the file path of a sample of your choosing into the field given by double-clicking the Image Input box (farthest left). Then hit Run to see the results on the displays to the far right of the model. Be sure to test with both types of samples and by tweaking the battery level (small white box with 100) to a number between 1 and 100 of your choosing while also being to enter the same number in the "Initial Condition" field in the other small white box to the right of the battery box (denoted with a 1/z). 
+
+NOTE: I used Simulink (the version that comes with MATLAB 2025a), so I cannot confirm if my model still works at the time of download. I also downloaded Stateflow, Computer Vision Toolbox, and Image Processing Toolbox, so you may need to as well if the model does not run properly. 
 
 ## Acknowledgements
 
