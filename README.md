@@ -1,2 +1,6 @@
-# F.I.R.E.SAT-CubeSat-Project
-F.I.R.E.SAT (Fire Intervention Rescue Expedition Satellite) is a self-conducted project where I designed a 3U (10 cm x 10 cm x 300 cm) cubesat that can withstand launch and low Earth orbit conditions, all while using a Convolutional Neural Network (CNN) retrained using augmented terrestrial pictures to detect fire signatures and downlink them using a Simulink pipeline.
+# F.I.R.E.SAT
+
+### Building a 3U CubeSat to combat the spread of wildfires.
+
+## TL;DR
+F.I.R.E.SAT (Fire Intervention Rescue Expedition Satellite) is a student-led CubeSat concept designed to monitor and detect wildfires from low Earth orbit. This project adds detailed CAD Modelling in Autodesk Inventor with intense FEA Testing in Ansys to create a flight-ready satellite chassis. Additionally, a CNN was retrained in MATLAB to detect fires from an augmented dataset of terrestrial fires and achieved ~94% accuracy, which was then implemented into a pipeline created in Simulink to simulate downlinking logic from orbit.
