@@ -12,7 +12,7 @@ F.I.R.E.SAT (Fire Intervention Rescue Expedition Satellite) is a student-led Cub
 - [FEA Testing](#FEA-Testing)
 - [CNN Retraining](#CNN-Retraining)
 - [Simulink Pipeline](#Simulink-Pipeline)
-- [How to View/Use Files](#How-to-View/Use-Files)
+- [How to View/Use Files](#How-to-View-/-Use-Files)
 - [Acknowledgements](#Acknowledgements)
 - [Concluding Details](#Concluding-Details)
 - [References](#References)
