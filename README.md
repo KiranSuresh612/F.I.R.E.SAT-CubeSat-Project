@@ -12,7 +12,7 @@ F.I.R.E.SAT (Fire Intervention Rescue Expedition Satellite) is a student-led Cub
 - [FEA Testing](#FEA-Testing)
 - [CNN Retraining](#CNN-Retraining)
 - [Simulink Pipeline](#Simulink-Pipeline)
-- [How to View/Use Files](#How-to-View-/-Use-Files)
+- [How to View and Use Files](#How-to-View-and-Use-Files)
 - [Acknowledgements](#Acknowledgements)
 - [Concluding Details](#Concluding-Details)
 - [References](#References)
@@ -70,7 +70,7 @@ The battery factor was included to simulate how the satellite downlinking logic 
 
 ![Simulink Pipeline Picture](https://github.com/KiranSuresh612/F.I.R.E.SAT-CubeSat-Project/blob/542c342aecb6dbfcaf5b9e63448345007e6e9592/Simulink%20Model%20Picture.png)
 
-## How to View/Use Files
+## How to View and Use Files
 
 If you would like to go through my work on F.I.R.E.SAT, feel free to do so via the various branches of this repo. If you are having trouble, please take a look at the instructions below.
 
