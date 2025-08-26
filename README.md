@@ -3,7 +3,7 @@
 ### Building a 3U CubeSat to combat the spread of wildfires.
 
 ## TL;DR
-F.I.R.E.SAT (Fire Intervention Rescue Expedition Satellite) is a student-led CubeSat concept designed to monitor and detect wildfires from low Earth orbit. This project adds detailed CAD Modelling in Autodesk Inventor with intense FEA Testing in Ansys to create a flight-ready satellite chassis. Additionally, a CNN was retrained in MATLAB to detect fires from an augmented dataset of terrestrial fires and achieved ~94% accuracy, which was then implemented into a pipeline created in Simulink to simulate downlinking logic from orbit. More details on F.I.R.E.SAT can be found below or in the various branches of this repo. Thank you for visiting!  
+F.I.R.E.SAT (Fire Intervention Rescue Expedition Satellite) is a student-led CubeSat concept designed to monitor and detect wildfires from low Earth orbit. This project adds detailed CAD Modelling in Autodesk Inventor with intense FEA Testing in Ansys to create a flight-ready satellite chassis. Additionally, a CNN was retrained in MATLAB to detect fires from an augmented dataset of terrestrial fires and achieved ~94% accuracy, which was then implemented into a pipeline created in Simulink to simulate downlinking logic from orbit. More details on F.I.R.E.SAT can be found below or in the various folders of this repo. Thank you for visiting!  
 
 ## Table of Contents
 - [Introduction](#Introduction)
@@ -23,7 +23,7 @@ F.I.R.E.SAT (Fire Intervention Rescue Expedition Satellite) is a self-conducted 
 ![F.I.R.E.SAT Exploded View](https://github.com/KiranSuresh612/F.I.R.E.SAT-CubeSat-Project/blob/cfb4e0ef8275dba22b265b11921efdde663f630b/F.I.R.E.SAT%20Exploded%20View%20Video%20(Final%20GIF).gif)
 
 ## Motivation and Objective
-Wildfires are a growing threat to ecosystems around the world, especially in Canada, with severe cases across the country. Current wildfire detection satellites cannot both rapidly detect and capture fine-resolution imagery to detect wildfires. The payload is a FLIR BOSON+ 640 Infrared Camera, which will perform better than most wildfire detection satellites today since infrared cameras perform better than regular cameras when the CubeSat is in Earth's shadow. Though F.I.R.E.SAT may not solve all the listed problems with modern satellites, I want it to be a mission-ready concept that, with more resources and development, may become a flight-ready mission that improves our wildfire detection and prevention capabilities. All concept sketches and art are under the "preliminary-sketches" branch.
+Wildfires are a growing threat to ecosystems around the world, especially in Canada, with severe cases across the country. Current wildfire detection satellites cannot both rapidly detect and capture fine-resolution imagery to detect wildfires. The payload is a FLIR BOSON+ 640 Infrared Camera, which will perform better than most wildfire detection satellites today since infrared cameras perform better than regular cameras when the CubeSat is in Earth's shadow. Though F.I.R.E.SAT may not solve all the listed problems with modern satellites, I want it to be a mission-ready concept that, with more resources and development, may become a flight-ready mission that improves our wildfire detection and prevention capabilities. All concept sketches and art are under the "Preliminary Sketches and Designs" folder.
 
 ### CAD Modelling
 The CAD model was developed in Autodesk Inventor using various industry-sourced components and several self-developed parts. The CubeSat model has the dimensions 9.8 cm x 9.8 cm x 30 cm and is 1:1 in scale. I did not make the side lengths 10 cm, as I wanted about 0.2 cm as clearance for the CubeSat launcher's deployer rails. To make my CAD model as accurate as possible, I got CAD models from the vendors themselves. These components are: (NanoMind A3200), Power System (NanoPower P60), Comms (NanoCom AX100), Docking System (NanoDock DMC-3), GPS Kit (NanoSense NovAtel OEM-719), Thermal Camera (FLIR BOSON+ 640 with a 73mm lens), Star Trackers (AAC Hyperion ST200), Sun Sensors (AAC Hyperion SS200), Battery (AAC Clyde Space Optimus 30-Watt Battery). I created several parts as well, such as most of the Attitude Determination and Control System or ADCS (controls the orientation of the satellite in space) shown below, the Antennae Deployer, all Mainframe parts, Protective Germanium Lens (to shield the thermal sensor from space), and Solar Cells. 
@@ -52,7 +52,7 @@ In the Transient Thermal (how temperature affects a body over time) test, I chec
 
 ![Transient Thermal GIF](https://github.com/KiranSuresh612/F.I.R.E.SAT-CubeSat-Project/blob/4cc3310f679b087f6d5bbb8ed4168484ff53ca37/Transient%20Thermal%20Animation%20GIF.gif)
 
-More Test Results can be viewed in the "fea-analysis" branch!
+More Test Results can be viewed in the "FEA Analysis" folder!
 
 ### CNN Retraining
 I retrained the pre-existing Convolutional Neural Network (CNN), SqueezeNet, to detect fire signatures using a dataset containing terrestrial fire images in .png format compiled by a team of researchers at Mendeley Data (citation in References) in MATLAB. SqueezeNet was chosen due to its low hardware requirements, which is a constant constraint in CubeSats such as F.I.R.E.SAT. The training set consisted of two folders, each containing thousands of pictures of either fires or no fires. These pictures were augmented to challenge the CNN and reduce the chances of the CNN memorizing the images instead of learning to differentiate between the two classes. These augmentations consisted of resizing, random rotations, and translations, which greatly helped the CNN generalize (i.e. make it adaptable so it can detect fires in any set of pictures instead of just the training set). 
@@ -72,25 +72,25 @@ The battery factor was included to simulate how the satellite downlinking logic 
 
 ## How to View and Use Files
 
-If you would like to go through my work on F.I.R.E.SAT, feel free to do so via the various branches of this repo. If you are having trouble, please take a look at the instructions below.
+If you would like to go through my work on F.I.R.E.SAT, feel free to do so via the various folders of this repo. If you are having trouble, please take a look at the instructions below.
 
 CAD Model: 
-Go to the "cad-files" branch, download the file named "F.I.R.E.SAT Mk.2 (Final Design).iam" and open with a CAD-friendly software like SolidWorks, Autodesk Inventor, etc (preferably Autodesk Inventor).
+Go to the "CAD Files" folder, download the file named "F.I.R.E.SAT Mk.2 (Final Design).iam" and open with a CAD-friendly software like SolidWorks, Autodesk Inventor, etc (preferably Autodesk Inventor).
 
 NOTE: I used Autodesk Inventor 2025, so I cannot guarantee that the file will open at the time of download.
 
 FEA Workflow: 
-Go to the "fea-analysis" branch, download the file named "FEA Model.wbpj" and open it with Ansys Workbench. The workflow and the used model are already in the workbench file! 
+Go to the "FEA Analysis" folder, download the file named "FEA Model.wbpj" and open it with Ansys Workbench. The workflow and the used model are already in the workbench file! 
 
 NOTE: I used Ansys Workbench/Mechanical 2025 R2 (Student Version), so I don't know if the Workbench file will behave the same for you when you download it.
 
 CNN Retraining: 
-Download the dataset by following the link in the References section and extract all the files. Please note that you will be using the folders in the Classification folder. Then, go to the "wildfire-classifier-cnn-files" branch, download the file named "Training Script.m" and open it in MATLAB. Fill in the sections listed in the code and finally run. Make sure all the files you download and use are in the same folder. It will take a varying amount of time to train (depends on your specs) and then test, but after that, you will have your very own retrained wildfire detection CNN. 
+Download the dataset by following the link in the References section and extract all the files. Please note that you will be using the folders in the Classification folder. Then, go to the "CNN Files" folder, download the file named "Training Script.m" and open it in MATLAB. Fill in the sections listed in the code and finally run. Make sure all the files you download and use are in the same folder. It will take a varying amount of time to train (depends on your specs) and then test, but after that, you will have your very own retrained wildfire detection CNN. 
 
 NOTE: I used MATLAB R2025a, so I do not know if the syntax or script will still work at the time of download. I also had to download the Deep Learning Toolbox and the Statistics and Machine Learning Toolbox (not 100% sure if needed by install just in case) using the Add-On explorer. 
 
 Simulink Pipeline: 
-Go to the "simulink-model-files" branch, download the files named "simulink_OBC_Diagram.slx" and "simulink_OBC_Diagram.slxc" and save them to the same folder. Then, transfer a copy of your retrained CNN from the folder you used for MATLAB (previous activity) to your newly made folder. Also, be sure to have a folder containing a few images from the dataset mentioned previously (fire and no fire samples) in the same primary folder. Then insert the file path of a sample of your choosing into the field given by double-clicking the Image Input box (farthest left). Then hit Run to see the results on the displays to the far right of the model. Be sure to test with both types of samples and by tweaking the battery level (small white box with 100) to a number between 1 and 100 of your choosing while also being to enter the same number in the "Initial Condition" field in the other small white box to the right of the battery box (denoted with a 1/z). 
+Go to the "Simulink Pipeline Files" folder, download the files named "simulink_OBC_Diagram.slx" and "simulink_OBC_Diagram.slxc" and save them to the same folder. Then, transfer a copy of your retrained CNN from the folder you used for MATLAB (previous activity) to your newly made folder. Also, be sure to have a folder containing a few images from the dataset mentioned previously (fire and no fire samples) in the same primary folder. Then insert the file path of a sample of your choosing into the field given by double-clicking the Image Input box (farthest left). Then hit Run to see the results on the displays to the far right of the model. Be sure to test with both types of samples and by tweaking the battery level (small white box with 100) to a number between 1 and 100 of your choosing while also being to enter the same number in the "Initial Condition" field in the other small white box to the right of the battery box (denoted with a 1/z). 
 
 NOTE: I used Simulink R2025a, so I cannot confirm if my model still works at the time of download. I also downloaded Stateflow, Computer Vision Toolbox, and Image Processing Toolbox, so you may need to as well if the model does not run properly. 
 
