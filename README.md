@@ -35,6 +35,7 @@ By gathering CAD models of flight-proven components from vendors, I was able to 
 I often wanted to add several components to F.I.R.E.SAT, but had to hold myself back because it would not fit within my mainframe design. The CAD model allowed me to explore my vision for F.I.R.E.SAT and helped establish trade-offs between functionality and factors like weight and volume.
 
 ![Labelled Diagram of F.I.R.E.SAT](https://github.com/KiranSuresh612/F.I.R.E.SAT-CubeSat-Project/blob/fe3751d426fa1ecd6f2429fbabb1b5e104a1eb7d/Labelled%20Diagram.png)
+# Please note that Onboard Computer is actually a NanoMind A3200, not AX100
 
 ### FEA Testing
 To test if the satellite would survive under launch and orbital conditions, Finite Element Analysis (FEA) was conducted on the model. FEA is the process of breaking complex structures into tiny parts called finite elements and then applying specific conditions to those elements to test how the entire structure behaves. I assigned Aluminum 6061-T6 to be the material for my CubeSat mainframe and exterior because it is commonly used in satellite structures, and then conducted three tests: Deformation, Modal Frequency, and Transient Thermal. The Deformation and Modal Frequency tests were specifically designed to mimic launch conditions (i.e. when the satellite is brought up to space in a rocket). The tests were only done on the exterior walls and mainframe, since having the interior components built would create an unstable mesh, which couldn't be properly tested.  
